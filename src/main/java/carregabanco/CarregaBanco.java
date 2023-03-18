@@ -2,7 +2,9 @@ package carregabanco;
 
 import java.util.Scanner;
 
+import carregabanco.model.AlunoModel;
 import carregabanco.view.CarregaBancoView;
+
 
 public class CarregaBanco {
 	public static void main(String[] args) {
@@ -25,13 +27,13 @@ public class CarregaBanco {
 						cadastrar(scanner);
 						break;
 					case 2: 
-						excluir(scanner);
+						//excluir(scanner);
 						break;
 					case 3:
-						buscarAluno(scanner);
+						//buscarAluno(scanner);
 						break;
 					case 4:
-						buscarTodosAlunos(scanner);
+						//buscarTodosAlunos(scanner);
 						break;
 					default:
 						System.out.println("Opção Inválida!!");
@@ -42,6 +44,41 @@ public class CarregaBanco {
 		}
 
 		
+	public static void cadastrar(Scanner scanner) {
+		
+		System.out.println("######################### Cadastrar Aluno #########################");
+		
+		System.out.println("Digite nome do Aluno: ");
+		String nome = scanner.nextLine();
+		System.out.println("Digite a Coordenação: ");
+		String coord = scanner.nextLine();
+		System.out.println("Digite o Curso: ");
+		String curso = scanner.nextLine();
+		System.out.println("Situação do Aluno: ");
+		String sit = scanner.nextLine();
+		System.out.println("Período de Entrada: ");
+		String ano = scanner.nextLine();
+		
+		AlunoModel aluno = new AlunoModel(nome, coord, curso, sit, ano);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 		
 		    
 	}	

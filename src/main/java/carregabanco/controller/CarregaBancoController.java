@@ -10,8 +10,12 @@ import carregabanco.model.AlunoModel;
 import carregabanco.repository.AlunoDao;
 
 public class CarregaBancoController {
+	
 	private static ArrayList<AlunoModel> valores = new ArrayList<AlunoModel>();
 	//campus, polo, coordenacao, curso, nome_estudante, situacao, idade, sexo, email_institucional, periodo_entrada
+	
+	
+	
 	public ArrayList<AlunoModel> loader(String file) {
 		try {
 			Reader reader = new InputStreamReader(new FileInputStream("src/main/resources/" + file), "UTF-8");
@@ -34,6 +38,8 @@ public class CarregaBancoController {
 				
 				valores.add(aluno);
 				linha = bf.readLine();
+				
+				bf.close();
 			}
 		} catch (Exception e) {
 			System.out.println("Erro" + e.getMessage());
