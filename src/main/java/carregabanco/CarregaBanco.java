@@ -3,6 +3,7 @@ package carregabanco;
 import java.util.Scanner;
 
 import carregabanco.model.AlunoModel;
+import carregabanco.repository.AlunoDao;
 import carregabanco.view.CarregaBancoView;
 
 
@@ -27,7 +28,7 @@ public class CarregaBanco {
 						cadastrar(scanner);
 						break;
 					case 2: 
-						//excluir(scanner);
+						excluir(scanner);
 						break;
 					case 3:
 						//buscarAluno(scanner);
@@ -54,32 +55,48 @@ public class CarregaBanco {
 		String coord = scanner.nextLine();
 		System.out.println("Digite o Curso: ");
 		String curso = scanner.nextLine();
+		System.out.println("Digite o Campus: ");
+		String campus = scanner.nextLine();
+		System.out.println("Digite o Email Institucional: ");
+		String email_institucional = scanner.nextLine();
+		System.out.println("Digite a Idade: ");
+		int idade = scanner.nextInt();
+		scanner.nextLine();
+		System.out.println("Digite o Polo: ");
+		String polo = scanner.nextLine();
+		System.out.println("Digite o Sexo: ");
+		String sexo = scanner.nextLine();
 		System.out.println("Situação do Aluno: ");
 		String sit = scanner.nextLine();
 		System.out.println("Período de Entrada: ");
 		String ano = scanner.nextLine();
 		
-		AlunoModel aluno = new AlunoModel(nome, coord, curso, sit, ano);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		AlunoDao alunodao = AlunoDao.getInstance();
+		AlunoModel aluno = new AlunoModel(campus, polo, email_institucional, idade, sexo, nome, coord, curso, sit, ano);
+		alunodao.persist(aluno);	
 		
 	}
+	
+	
+		public static void excluir(Scanner scanner) {
+		
+		System.out.println("######################### Excluir Aluno #########################");
+
+		System.out.println("Digite o  ID do Aluno que deseja Excluir:");
+		int id = scanner.nextInt();
+		scanner.nextLine();
+		
+		
+		AlunoDao alunodao = AlunoDao.getInstance();
+		//AlunoModel aluno = new AlunoModel();
+		alunodao.removeById(id);;	
+		
+	}
+	
+	
+	
 		
 		    
-	}	
+}	
 

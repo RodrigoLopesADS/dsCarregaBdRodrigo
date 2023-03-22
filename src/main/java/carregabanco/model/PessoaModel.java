@@ -26,6 +26,22 @@ public class PessoaModel implements Serializable{
 	private int idade;
 	private String sexo;
 	
+	
+	
+	
+	
+	
+	public PessoaModel(String campus, String polo, String email_institucional, int idade, String sexo) {
+		this.campus = campus;
+		this.polo = polo;
+		this.email_institucional = email_institucional;
+		this.idade = idade;
+		this.sexo = sexo;
+	}
+	public PessoaModel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public String getCampus() {
 		return campus;
 	}

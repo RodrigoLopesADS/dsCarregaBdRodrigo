@@ -16,7 +16,7 @@ public class CarregaBancoController {
 	
 	
 	
-	public ArrayList<AlunoModel> loader(String file) {
+	/*public ArrayList<AlunoModel> loader(String file) {
 		try {
 			Reader reader = new InputStreamReader(new FileInputStream("src/main/resources/" + file), "UTF-8");
 			BufferedReader bf = new BufferedReader(reader);
@@ -52,5 +52,19 @@ public class CarregaBancoController {
 		for(AlunoModel aluno : listaDeAlunos) {
 			alunoDao.persist(aluno);
 		}
+	}*/
+	
+	public void cadastraBD(AlunoModel aluno) {
+		AlunoDao alunoDao = AlunoDao.getInstance();
+		alunoDao.persist(aluno);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
